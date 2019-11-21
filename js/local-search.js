@@ -33,7 +33,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const getIndexByWord = (word, text, caseSensitive) => {
     let wordLen = word.length;
-    if (wordLen === 0) return [];
+    if (wordLen === 0) {
+      return [];
+    }
     let startPosition = 0;
     let position = [];
     let index = [];
@@ -114,7 +116,9 @@ window.addEventListener('DOMContentLoaded', () => {
       // Perform local searching
       datas.forEach(data => {
         // Only match articles with not empty titles
-        if (!data.title) return;
+        if (!data.title) {
+          return;
+        }
         let searchTextCount = 0;
         let title = data.title.trim();
         let titleInLowerCase = title.toLowerCase();
@@ -240,11 +244,11 @@ window.addEventListener('DOMContentLoaded', () => {
       .then(res => {
         // Get the contents from search data
         isfetched = true;
-        datas = isXml ? [...new DOMParser().parseFromString(res, 'text/xml').querySelectorAll('entry')].map(element => {
+        datas = isXml ? [...new DOMParser().parseFromString(res, 'text/xml').querySelectorAll('entry')].map(item => {
           return {
-            title  : element.querySelector('title').innerHTML,
-            content: element.querySelector('content').innerHTML,
-            url    : element.querySelector('url').innerHTML
+            title  : item.querySelector('title').innerHTML,
+            content: item.querySelector('content').innerHTML,
+            url    : item.querySelector('url').innerHTML
           };
         }) : JSON.parse(res);
 
@@ -288,7 +292,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   // Handle and trigger popup window
-  document.querySelector('.popup-trigger').addEventListener('click', () => {
+  document.querySelector('.popup-trigger').addEventListener('click', event => {
+    event.stopPropagation();
     if (isfetched === false) {
       searchFunc();
     } else {
