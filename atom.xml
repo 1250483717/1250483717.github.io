@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>菜鸡的自我修养</title>
+  
+  <subtitle>Happy coding!!!</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-11-19T08:14:30.964Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>赵旭</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>图注意力机制</title>
+    <link href="http://yoursite.com/2019/11/19/%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/"/>
+    <id>http://yoursite.com/2019/11/19/%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/</id>
+    <published>2019-11-19T08:14:30.000Z</published>
+    <updated>2019-11-19T08:14:30.964Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>git学习</title>
+    <link href="http://yoursite.com/2019/11/19/git%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://yoursite.com/2019/11/19/git%E5%AD%A6%E4%B9%A0/</id>
+    <published>2019-11-19T02:04:20.000Z</published>
+    <updated>2019-11-21T10:47:24.572Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;/images/git.jpg&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>激活函数</title>
+    <link href="http://yoursite.com/2019/11/18/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/"/>
+    <id>http://yoursite.com/2019/11/18/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/</id>
+    <published>2019-11-18T11:48:40.000Z</published>
+    <updated>2019-11-22T01:31:07.568Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-sigmoid函数&quot;&gt;&lt;a href=&quot;#1-sigmoid函数&quot; class=&quot;headerlink&quot; title=&quot;1. sigmoid函数&quot;&gt;&lt;/a&gt;1. sigmoid函数&lt;/h3&gt;&lt;p&gt;​    sigmoid函数表达式如下：&lt;br&gt;$$&lt;br&gt;\sigma(z)=\frac{1}{1+e^{-z}}&lt;br&gt;$$&lt;br&gt;​    图像如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/sigmoid.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;​    由图像可知，输出范围为(0, 1)，二分类常用函数，逻辑回归也多采用，在二分类中，输出事件概率，满足某一概率则划分为正。&lt;/p&gt;
+&lt;p&gt;​    优点：1.值域在0和1之间&lt;/p&gt;
+&lt;p&gt;​                2.函数具有非常好的对称性&lt;/p&gt;
+&lt;p&gt;​    缺点： 输入超过一定范围会不敏感&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="深度学习" scheme="http://yoursite.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="激活函数" scheme="http://yoursite.com/tags/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo 命令</title>
+    <link href="http://yoursite.com/2019/11/18/first/"/>
+    <id>http://yoursite.com/2019/11/18/first/</id>
+    <published>2019-11-18T08:42:40.000Z</published>
+    <updated>2019-11-22T02:04:37.345Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;​    Hexo是一个简单、快速、强大的基于 Github Pages 的博客发布工具，支持Markdown格式，有众多优秀插件和主题，以下是一些使用中经常用到的命令。在部署到github时，最好使用clean清理下缓存，否则某些效果可能无法正常显示。 &lt;/p&gt;
+&lt;h3 id=&quot;常用命令&quot;&gt;&lt;a href=&quot;#常用命令&quot; class=&quot;headerlink&quot; title=&quot;常用命令&quot;&gt;&lt;/a&gt;常用命令&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;命令&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;hexo init&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;初始化&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;hexo clean&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;清除缓存 ,会删掉根目录下的public文件夹&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;hexo new “postName” | hexo n “postName”&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;新建文章&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;hexo new page “pageName”&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;新建页面&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;hexo generate | hexo g&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;生成静态页面至public目录&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;hexo server | hexo s&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;开启预览访问&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;hexo deploy | hexo d&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;部署到github&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;hexo help&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;查看帮助&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;hexo version&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;查看版本&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;hexo –safe&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;安全模式（不会载入插件和脚本）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;hexo –debug&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;调试模式（终端显示调试信息并记录到debug.log）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;hexo –silent&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;简洁模式（隐藏终端信息）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;hexo –draft&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;显示source/_drafts文件夹中的草稿&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;hexo –cwd /path/to/cwd&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;自定义当前工作目录的路径&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>
