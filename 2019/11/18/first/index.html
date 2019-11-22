@@ -313,6 +313,34 @@
             </span>
           
 
+          
+            <span id="/2019/11/18/first/" class="post-meta-item leancloud_visitors" data-flag-title="hexo 命令">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+            
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="fa fa-comment-o"></i>
+    </span>
+    
+      <span class="post-meta-item-text">评论数：</span>
+    
+  
+    <a href="/2019/11/18/first/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/18/first/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
           <br>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -546,11 +574,7 @@
           </div>
           
     
-    
-  <div class="comments" id="comments">
-    <div id="lv-container" data-id="city" data-uid="MTAyMC80NzY1MS8yNDE0OQ=="></div>
-  </div>
-  
+    <div class="comments" id="comments"></div>
   
 
 
@@ -660,7 +684,7 @@
   <div class="links-of-blogroll motion-element">
     <div class="links-of-blogroll-title">
       <i class="fa fa-fw fa-link"></i>
-      
+      福利导航嗷
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
@@ -857,19 +881,27 @@
 
 
     
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 
 <script>
-  window.livereOptions = {
-    refer: '2019/11/18/first/'
-  };
-  (function(d, s) {
-    var j, e = d.getElementsByTagName(s)[0];
-    if (typeof LivereTower === 'function') { return; }
-    j = d.createElement(s);
-    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-    j.async = true;
-    e.parentNode.insertBefore(j, e);
-  })(document, 'script');
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'EUYyqBQS7GWdBMNO889Pp0eT-gzGzoHsz',
+    appKey: '8IcHETLYT2OMNKJi1iRXJDEQ',
+    placeholder: '爸爸点我！！',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: '' || 'zh-cn'
+  });
 </script>
 
 
