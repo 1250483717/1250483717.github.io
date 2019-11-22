@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.zhaoxu.ml/about/index.html</loc>
+    
+    <lastmod>2019-11-22T10:04:30.565Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.zhaoxu.ml/2019/11/18/first/</loc>
     
     <lastmod>2019-11-22T02:04:37.345Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://blog.zhaoxu.ml/categories/index.html</loc>
     
     <lastmod>2019-11-22T00:55:20.338Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.zhaoxu.ml/about/index.html</loc>
-    
-    <lastmod>2019-11-22T00:54:54.845Z</lastmod>
     
   </url>
   
