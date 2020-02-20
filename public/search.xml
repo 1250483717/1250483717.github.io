@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>PyTorch图神经网络库PyG</title>
+      <link href="/2019/11/26/PyTorch%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%BA%93PyG/"/>
+      <url>/2019/11/26/PyTorch%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%BA%93PyG/</url>
+      
+        <content type="html"><![CDATA[<p>​    Pytorch Geometric (PyG) 是由德国研究者提出的基于pytorch的几何深度学习库，具有快速、易用的优势，使得图神经网络的搭建变得非常容易。Github地址：<a href="https://github.com/rusty1s/pytorch_geometric" target="_blank" rel="noopener">https://github.com/rusty1s/pytorch_geometric</a>，论文地址：<a href="https://arxiv.org/pdf/1903.02428.pdf" target="_blank" rel="noopener"> https://arxiv.org/pdf/1903.02428.pdf </a></p><p>​    图神经网络 (GNN) 是近年发展起来的一个很有前景的深度学习方向，也是一种强大的图、点云和流形表示学习方法。实现 GNN 具有挑战性，因为需要在高度稀疏且不规则、不同大小的数据上实现高 GPU 吞吐量，故而有了PyG的诞生。PyG利用专用的 CUDA 内核实现了高性能。它遵循一个简单的消息传递 API，将最近提出的大多数卷积和池化层捆绑到一个统一的框架中。所有实现的方法都支持 CPU 和 GPU 计算，并遵循一个不可变的数据流范式，该范式支持图结构随时间的动态变化，甚至比几个月前 NYU、AWS 联合开发的图神经网络库 DGL(Deep Graph Library) 快了 15 倍！</p><p>​    PyTorch Geometry 是一个基于 PyTorch 的几何深度学习扩展库，用于不规则结构输入数据，例如图(graphs)、点云 (point clouds) 和流形 (manifolds)。PyTorch Geometry 包含了各种针对图形和其他不规则结构的深度学习方法，也称为几何深度学习，来自于许多已发表的论文。</p><p>​    此外，它还包含一个易于使用的 mini-batch 加载器、多 GPU 支持、大量通用基准数据集和有用的转换，既可以学习任意图形，也可以学习 3D 网格或点云。</p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install torch-geometric</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> pytorch </tag>
+            
+            <tag> 图神经网络 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>图注意力机制</title>
       <link href="/2019/11/19/%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/"/>
       <url>/2019/11/19/%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/</url>
@@ -21,7 +42,7 @@
       <link href="/2019/11/19/git%E5%AD%A6%E4%B9%A0/"/>
       <url>/2019/11/19/git%E5%AD%A6%E4%B9%A0/</url>
       
-        <content type="html"><![CDATA[<p><img src="/images/git.jpg" alt="git-tutorial"></p>]]></content>
+        <content type="html"><![CDATA[<p><img src="/images/git.jpg" alt="git-tutorial"></p><h3 id="Git是什么？"><a href="#Git是什么？" class="headerlink" title="Git是什么？"></a>Git是什么？</h3><p>Git是一个版本控制系统，由linux之父采用C语言开发。</p><h3 id="集中式vs分布式"><a href="#集中式vs分布式" class="headerlink" title="集中式vs分布式"></a>集中式vs分布式</h3><p>CVS和SVN是集中式的版本控制系统，Git则是分布式的版本控制系统。</p><p>集中式</p><p><img src="/images/%E9%9B%86%E4%B8%AD%E5%BC%8F.jpg" alt="git-tutorial"></p>]]></content>
       
       
       
