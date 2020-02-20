@@ -63,18 +63,15 @@
     <link href="https://blog.zhaoxu.ml/2019/11/19/git%E5%AD%A6%E4%B9%A0/"/>
     <id>https://blog.zhaoxu.ml/2019/11/19/git%E5%AD%A6%E4%B9%A0/</id>
     <published>2019-11-19T02:04:20.000Z</published>
-    <updated>2020-02-20T07:40:14.131Z</updated>
+    <updated>2020-02-20T07:41:15.408Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;&lt;img src=&quot;/images/git.jpg&quot; alt=&quot;git-tutorial&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Git是什么？&quot;&gt;&lt;a href=&quot;#Git是什么？&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;p&gt;&lt;img src=&quot;/images/git.jpg&quot; alt=&quot;git-tutorial&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Git是什么？&quot;&gt;&lt;a href=&quot;#Git是什么？&quot; class=&quot;headerlink&quot; title=&quot;Git是什么？&quot;&gt;&lt;/a&gt;Git是什么？&lt;/h3&gt;&lt;p&gt;Git是一个版本控制系统，由linux之父采用C语言开发。&lt;/p&gt;
+&lt;h3 id=&quot;集中式vs分布式&quot;&gt;&lt;a href=&quot;#集中式vs分布式&quot; class=&quot;headerlink&quot; title=&quot;集中式vs分布式&quot;&gt;&lt;/a&gt;集中式vs分布式&lt;/h3&gt;&lt;p&gt;CVS和SVN是集中式的版本控制系统，Git则是分布式的版本控制系统。&lt;/p&gt;
+&lt;h5 id=&quot;集中式&quot;&gt;&lt;a href=&quot;#集中式&quot; class=&quot;headerlink&quot; title=&quot;集中式&quot;&gt;&lt;/a&gt;集中式&lt;/h5&gt;&lt;p&gt;&lt;img src=&quot;/images/git_01.jfif&quot; alt=&quot;git-tutorial&quot;&gt;&lt;/p&gt;
+&lt;p&gt;版本库存储于中央服务器上，使用必须联网。&lt;/p&gt;
     
     </summary>
     
