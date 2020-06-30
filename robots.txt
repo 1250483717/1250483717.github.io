@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+
+Disallow: /about/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /vendors/
+Disallow: /lib/
+Sitemap: https://blog.zhaoxu.fun/sitemap.xml
