@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.zhaoxu.fun/"/>
-  <updated>2020-06-30T13:51:49.024Z</updated>
+  <updated>2020-07-13T01:50:34.856Z</updated>
   <id>https://blog.zhaoxu.fun/</id>
   
   <author>
@@ -15,6 +15,61 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ssh反向代理实现内网穿透</title>
+    <link href="https://blog.zhaoxu.fun/2020/07/13/ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
+    <id>https://blog.zhaoxu.fun/2020/07/13/ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</id>
+    <published>2020-07-13T00:54:24.000Z</published>
+    <updated>2020-07-13T01:50:34.856Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;由于实验室服务器为内网IP，因疫情影响不在学校的话是无法访问的，只能用teamviewer来远程桌面连接，teamviewer的延迟大家都懂的。所以采用ssh的连接还是十分必须的，这里我们需要有一台公网的服务器作为我们访问实验室服务器的中继，同时实验室的服务器也不能断网，这
+        
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="https://blog.zhaoxu.fun/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="ssh反向代理" scheme="https://blog.zhaoxu.fun/tags/ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/"/>
+    
+      <category term="内网穿透" scheme="https://blog.zhaoxu.fun/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Shell 脚本学习</title>
+    <link href="https://blog.zhaoxu.fun/2020/07/02/Shell-%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://blog.zhaoxu.fun/2020/07/02/Shell-%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0/</id>
+    <published>2020-07-02T14:58:24.000Z</published>
+    <updated>2020-07-02T14:59:21.239Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="shell" scheme="https://blog.zhaoxu.fun/tags/shell/"/>
+    
+  </entry>
   
   <entry>
     <title>CentOS Mongodb安装配置与数据导入</title>
@@ -76,7 +131,7 @@
     <link href="https://blog.zhaoxu.fun/2020/04/18/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8BERT%E8%BF%9B%E8%A1%8C%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%EF%BC%9F/"/>
     <id>https://blog.zhaoxu.fun/2020/04/18/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8BERT%E8%BF%9B%E8%A1%8C%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%EF%BC%9F/</id>
     <published>2020-04-18T03:40:32.000Z</published>
-    <updated>2020-04-18T03:46:57.894Z</updated>
+    <updated>2020-07-01T09:17:22.380Z</updated>
     
     <summary type="html">
     
@@ -84,7 +139,7 @@
       
         
         
-          &lt;h3 id=&quot;1-什么是BERT？&quot;&gt;&lt;a href=&quot;#1-什么是BERT？&quot; class=&quot;headerlink&quot; title=&quot;1. 什么是BERT？&quot;&gt;&lt;/a&gt;1.
+          &lt;h3 id=&quot;1-什么是BERT？&quot;&gt;&lt;a href=&quot;#1-什么是BERT？&quot; class=&quot;headerlink&quot; title=&quot;1. 什么是BERT？&quot;&gt;&lt;/a&gt;1. 什么是BERT？&lt;/h3&gt;&lt;p&gt; BERT的全称是Bidirectional Encoder
         
       
     

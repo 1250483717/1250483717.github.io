@@ -69,20 +69,22 @@
   };
 </script>
 
-  <meta name="description" content="​    Hexo是一个简单、快速、强大的基于 Github Pages 的博客发布工具，支持Markdown格式，有众多优秀插件和主题，以下是一些使用中经常用到的命令。在部署到github时，最好使用clean清理下缓存，否则某些效果可能无法正常显示。  常用命令   命令 功能    hexo init 初始化   hexo clean 清除缓存 ,会删掉根目录下的public文件夹   he">
-<meta name="keywords" content="hexo">
+  <meta name="description" content="由于实验室服务器为内网IP，因疫情影响不在学校的话是无法访问的，只能用teamviewer来远程桌面连接，teamviewer的延迟大家都懂的。所以采用ssh的连接还是十分必须的，这里我们需要有一台公网的服务器作为我们访问实验室服务器的中继，同时实验室的服务器也不能断网，这里采用的是阿里云。 正向代理 我们常说的代理一般指的就是正向代理。在正向代理的过程中，隐藏了真实的请求客户端，服务端不知道真实">
+<meta name="keywords" content="ssh反向代理,内网穿透">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo 命令">
-<meta property="og:url" content="https:&#x2F;&#x2F;blog.zhaoxu.fun&#x2F;2019&#x2F;11&#x2F;18&#x2F;first&#x2F;index.html">
+<meta property="og:title" content="ssh反向代理实现内网穿透">
+<meta property="og:url" content="https:&#x2F;&#x2F;blog.zhaoxu.fun&#x2F;2020&#x2F;07&#x2F;13&#x2F;ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F&#x2F;index.html">
 <meta property="og:site_name" content="菜鸡的自我修养">
-<meta property="og:description" content="​    Hexo是一个简单、快速、强大的基于 Github Pages 的博客发布工具，支持Markdown格式，有众多优秀插件和主题，以下是一些使用中经常用到的命令。在部署到github时，最好使用clean清理下缓存，否则某些效果可能无法正常显示。  常用命令   命令 功能    hexo init 初始化   hexo clean 清除缓存 ,会删掉根目录下的public文件夹   he">
+<meta property="og:description" content="由于实验室服务器为内网IP，因疫情影响不在学校的话是无法访问的，只能用teamviewer来远程桌面连接，teamviewer的延迟大家都懂的。所以采用ssh的连接还是十分必须的，这里我们需要有一台公网的服务器作为我们访问实验室服务器的中继，同时实验室的服务器也不能断网，这里采用的是阿里云。 正向代理 我们常说的代理一般指的就是正向代理。在正向代理的过程中，隐藏了真实的请求客户端，服务端不知道真实">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;blog.zhaoxu.fun&#x2F;images&#x2F;managedns.jpg">
-<meta property="og:updated_time" content="2019-11-22T02:04:37.345Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.zhaoxu.fun&#x2F;2020&#x2F;07&#x2F;13&#x2F;ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F&#x2F;img%5C%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.zhaoxu.fun&#x2F;2020&#x2F;07&#x2F;13&#x2F;ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F&#x2F;img%5C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;blog.zhaoxu.fun&#x2F;2020&#x2F;07&#x2F;13&#x2F;ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F&#x2F;img%5C%E6%A3%80%E6%9F%A5%E6%98%AF%E5%90%A6%E6%89%A7%E8%A1%8C%E6%88%90%E5%8A%9F.jpg">
+<meta property="og:updated_time" content="2020-07-13T01:50:34.856Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;blog.zhaoxu.fun&#x2F;images&#x2F;managedns.jpg">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;blog.zhaoxu.fun&#x2F;2020&#x2F;07&#x2F;13&#x2F;ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F&#x2F;img%5C%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86.jpg">
   <link rel="alternate" href="/atom.xml" title="菜鸡的自我修养" type="application/atom+xml">
-  <link rel="canonical" href="https://blog.zhaoxu.fun/2019/11/18/first/">
+  <link rel="canonical" href="https://blog.zhaoxu.fun/2020/07/13/ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">
 
 
 <script id="page.configurations">
@@ -91,7 +93,7 @@
   };
 </script>
 
-  <title>hexo 命令 | 菜鸡的自我修养</title>
+  <title>ssh反向代理实现内网穿透 | 菜鸡的自我修养</title>
   
 
 
@@ -301,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.zhaoxu.fun/2019/11/18/first/">
+    <link itemprop="mainEntityOfPage" href="https://blog.zhaoxu.fun/2020/07/13/ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xu Zhao">
@@ -315,7 +317,7 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">hexo 命令
+          <h1 class="post-title" itemprop="name headline">ssh反向代理实现内网穿透
 
               
             
@@ -335,21 +337,11 @@
                 
               
 
-              <time title="创建时间：2019-11-18 16:42:40" itemprop="dateCreated datePublished" datetime="2019-11-18T16:42:40+08:00">2019-11-18</time>
+              <time title="创建时间：2020-07-13 08:54:24 / 修改时间：09:50:34" itemprop="dateCreated datePublished" datetime="2020-07-13T08:54:24+08:00">2020-07-13</time>
             </span>
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-11-22 10:04:37" itemprop="dateModified" datetime="2019-11-22T10:04:37+08:00">2019-11-22</time>
-              </span>
             
           
             <span class="post-meta-item">
@@ -369,7 +361,7 @@
           
 
           
-            <span id="/2019/11/18/first/" class="post-meta-item leancloud_visitors" data-flag-title="hexo 命令">
+            <span id="/2020/07/13/ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" class="post-meta-item leancloud_visitors" data-flag-title="ssh反向代理实现内网穿透">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -390,8 +382,8 @@
       <span class="post-meta-item-text">评论数：</span>
     
   
-    <a href="/2019/11/18/first/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/18/first/" itemprop="commentCount"></span>
+    <a href="/2020/07/13/ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/13/ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -404,7 +396,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">1.7k</span>
+              <span title="本文字数">1.2k</span>
             </span>
           
             <span class="post-meta-item">
@@ -414,7 +406,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">2 分钟</span>
+              <span title="阅读时长">1 分钟</span>
             </span>
           
 
@@ -427,149 +419,27 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>​    Hexo是一个简单、快速、强大的基于 Github Pages 的博客发布工具，支持Markdown格式，有众多优秀插件和主题，以下是一些使用中经常用到的命令。在部署到github时，最好使用clean清理下缓存，否则某些效果可能无法正常显示。 </p>
-<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><table>
-<thead>
-<tr>
-<th align="center">命令</th>
-<th align="center">功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">hexo init</td>
-<td align="center">初始化</td>
-</tr>
-<tr>
-<td align="center">hexo clean</td>
-<td align="center">清除缓存 ,会删掉根目录下的public文件夹</td>
-</tr>
-<tr>
-<td align="center">hexo new “postName” | hexo n “postName”</td>
-<td align="center">新建文章</td>
-</tr>
-<tr>
-<td align="center">hexo new page “pageName”</td>
-<td align="center">新建页面</td>
-</tr>
-<tr>
-<td align="center">hexo generate | hexo g</td>
-<td align="center">生成静态页面至public目录</td>
-</tr>
-<tr>
-<td align="center">hexo server | hexo s</td>
-<td align="center">开启预览访问</td>
-</tr>
-<tr>
-<td align="center">hexo deploy | hexo d</td>
-<td align="center">部署到github</td>
-</tr>
-<tr>
-<td align="center">hexo help</td>
-<td align="center">查看帮助</td>
-</tr>
-<tr>
-<td align="center">hexo version</td>
-<td align="center">查看版本</td>
-</tr>
-<tr>
-<td align="center">hexo –safe</td>
-<td align="center">安全模式（不会载入插件和脚本）</td>
-</tr>
-<tr>
-<td align="center">hexo –debug</td>
-<td align="center">调试模式（终端显示调试信息并记录到debug.log）</td>
-</tr>
-<tr>
-<td align="center">hexo –silent</td>
-<td align="center">简洁模式（隐藏终端信息）</td>
-</tr>
-<tr>
-<td align="center">hexo –draft</td>
-<td align="center">显示source/_drafts文件夹中的草稿</td>
-</tr>
-<tr>
-<td align="center">hexo –cwd /path/to/cwd</td>
-<td align="center">自定义当前工作目录的路径</td>
-</tr>
-</tbody></table>
-<a id="more"></a>
+        <p>由于实验室服务器为内网IP，因疫情影响不在学校的话是无法访问的，只能用teamviewer来远程桌面连接，teamviewer的延迟大家都懂的。所以采用ssh的连接还是十分必须的，这里我们需要有一台公网的服务器作为我们访问实验室服务器的中继，同时实验室的服务器也不能断网，这里采用的是阿里云。</p>
+<h3 id="正向代理"><a href="#正向代理" class="headerlink" title="正向代理"></a>正向代理</h3><p> 我们常说的代理一般指的就是正向代理。在正向代理的过程中，隐藏了真实的请求客户端，服务端不知道真实的客户端是谁，客户端请求的服务都被代理服务器代替来请求，某些科学上网工具扮演的就是典型的正向代理角色。用浏览器访问google等网站时，被残忍的block掉，于是你可以在国外搭建一台代理服务器，让代理帮我去请求google.com，代理把请求返回的相应结构再返回给我，这就是正向代理。 简单的讲就是通过一个中继来访问目标服务器，而不是直接进行访问，从而绕开GFW等。</p>
+<p><img src="img%5C%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86.jpg" alt=""></p>
+<h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3><p>有别于正向代理，反向代理的对象是服务端。比如你访问<a href="http://www.google.com，其背后的服务器可能成千上万，而你并不需要关心，只需要知道反向代理服务器的地址就可以，反向代理服务器可以将你的请求转发到真实的服务器上。比如我们常用的nginx服务器，就是性能十分优秀的反向代理服务器，用来做负载均衡（[nginx负载均衡配置](https://www.cnblogs.com/diantong/p/11208508.html)）。" target="_blank" rel="noopener">www.google.com，其背后的服务器可能成千上万，而你并不需要关心，只需要知道反向代理服务器的地址就可以，反向代理服务器可以将你的请求转发到真实的服务器上。比如我们常用的nginx服务器，就是性能十分优秀的反向代理服务器，用来做负载均衡（[nginx负载均衡配置](https://www.cnblogs.com/diantong/p/11208508.html)）。</a></p>
+<p><img src="img%5C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.jpg" alt=""></p>
+<h3 id="如何实现反向代理"><a href="#如何实现反向代理" class="headerlink" title="如何实现反向代理"></a>如何实现反向代理</h3><p>比如我们有两台服务器A和B，A为实验室无公网ip服务器，B为阿里云有公网ip服务器。此时，若想让在校外的电脑C通过ssh登录C，你需要做的是： <strong>在B上建立对A的ssh反向代理通道，然后用C登录B后再ssh进入A。</strong> </p>
+<h4 id="1-建立反向代理"><a href="#1-建立反向代理" class="headerlink" title="1. 建立反向代理"></a>1. 建立反向代理</h4><p>首先在A上操作，使用如下语句向B发起反向代理请求（这里最好root执行），这里会要求输入B对应用户的密码，执行成功后，会在B的7280端口映射向A的ssh请求(端口22) </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -fCNR 3388:localhost:22 aliyun_user@aliyun_IP</span><br></pre></td></tr></table></figure>
 
-<h3 id="HEXO-NEXT-GITHUB-PAGE博客搭建"><a href="#HEXO-NEXT-GITHUB-PAGE博客搭建" class="headerlink" title="HEXO + NEXT + GITHUB PAGE博客搭建"></a>HEXO + NEXT + GITHUB PAGE博客搭建</h3><ol>
-<li><p>首先在github上新建一个仓库，名称为your_github_name.github.io（这里一定得是你的github名字）</p>
-</li>
-<li><p>安装node.js，在<a href="http://nodejs.cn/" target="_blank" rel="noopener">官网</a>中下载安装即可，安装后输入node -V查看是否安装成功。</p>
-</li>
-<li><p>安装hexo</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h4 id="2-检查是否执行成功"><a href="#2-检查是否执行成功" class="headerlink" title="2. 检查是否执行成功"></a>2. 检查是否执行成功</h4><p> 输入如下命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -tnlp</span><br></pre></td></tr></table></figure>
 
-<p>查看是否安装成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -V</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装git，windows下到<a href="https://gitforwindows.org/" target="_blank" rel="noopener">官网</a>下载安装即可。</p>
-</li>
-<li><p>新建一个用来存放博客内容的文件夹blog。</p>
-</li>
-<li><p>进入该文件夹后进行初始化。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd blog</span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<p>可以得到如下结果</p>
+<p><img src="img%5C%E6%A3%80%E6%9F%A5%E6%98%AF%E5%90%A6%E6%89%A7%E8%A1%8C%E6%88%90%E5%8A%9F.jpg" alt=""></p>
+<h4 id="3-测试登录"><a href="#3-测试登录" class="headerlink" title="3. 测试登录"></a>3. 测试登录</h4><p>首先用C登录B，然后在B上输入如下命令，输入A上用户名对应密码即可成功登录。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -p 3388 [A上的用户名]@localhost</span><br></pre></td></tr></table></figure>
 
+<h4 id="4-设置autossh"><a href="#4-设置autossh" class="headerlink" title="4. 设置autossh"></a>4. 设置autossh</h4><p>为了确保连接的稳定性，采用autossh工具来实现ssh断开后的自动连接。首先需要再A上安装 autossh工具，然后执行以下语句即可 ，其中-M是指定另外一个端口7281用来监测ssh的连接情况</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">autossh -M 7281 -fCNR 3388:localhost:22 aliyun_user@aliyun_IP</span><br></pre></td></tr></table></figure>
 
-</li>
-</ol>
-<ol start="7">
-<li><p>生成静态页面。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g | hexo generate</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>打开服务。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s | hexo server</span><br></pre></td></tr></table></figure>
-
-<p>最后在浏览器输入localhost:4000即可查看博客了，当然这个端口也可以自行指定。Ctrl+c即可关闭此服务。</p>
-</li>
-</ol>
-<h3 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h3><ol>
-<li><p>生成SSH Key添加到github，首先打开你的git bash</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;yourname&quot;</span><br><span class="line">git config --global user.email &quot;youremail&quot;</span><br></pre></td></tr></table></figure>
-
-<p>然后进行key的生成</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;youremail&quot;</span><br></pre></td></tr></table></figure>
-
-<p>在.ssh文件中找到生成的key复制到github中。</p>
-</li>
-<li><p>测试是否能够连接成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github,com</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>配置hexo的git信息</p>
-<p>首先打开blog文件夹，在其中_config.yml文件夹的最后修改为以下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果到这一步直接提交是会报错的，我们需要安装deploy-git</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>最后</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
-
-<p>建议每次提交前先clean下，否则可能导致某些内容无法正常显示，clean会删除public文件夹。</p>
-</li>
-</ol>
-<h3 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h3><ol>
-<li><p>获取域名</p>
-<p>我这里用的是<a href="https://www.freenom.com/zh/index.html?lang=zh" target="_blank" rel="noopener">freenom</a>的免费域名，注册即可申请一年的免费域名。</p>
-</li>
-<li><p>域名解析</p>
-<p>如果用的是freenom的话，进入该网站，在域名（my domains）页面点击manage domian按钮进入域名管理页面，再点击Manage Freenom DNS来添加域名解析。</p>
-<p><img src="/images/managedns.jpg" alt=""></p>
-<p>需要添加如图上所示的两条记录，首先ping一下你的地址获得ip。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping yourname.github.io</span><br></pre></td></tr></table></figure>
-
-<p>添加CNAME，采用bolg.xxx.xxx的二级域名。</p>
-</li>
-<li><p>github设置</p>
-<p>进入对应仓库的setting页面，在Github Pages项下的Custom domain填入你的域名地址。</p>
-</li>
-<li><p>在blog文件下的source下添加CNAME文件夹，内容为blog.xxx.xxx，不需要后缀名。</p>
-</li>
-<li><p>重新进行hexo的部署操作，等待域名解析完成后即可访问。</p>
-</li>
-</ol>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://blog.csdn.net/ppp8300885/article/details/81062052" target="_blank" rel="noopener">https://blog.csdn.net/ppp8300885/article/details/81062052</a></p>
 
     </div>
 
@@ -603,7 +473,7 @@
     <strong>本文作者： </strong>Xu Zhao</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.zhaoxu.fun/2019/11/18/first/" title="hexo 命令">https:&#x2F;&#x2F;blog.zhaoxu.fun&#x2F;2019&#x2F;11&#x2F;18&#x2F;first&#x2F;</a>
+    <a href="https://blog.zhaoxu.fun/2020/07/13/ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" title="ssh反向代理实现内网穿透">https:&#x2F;&#x2F;blog.zhaoxu.fun&#x2F;2020&#x2F;07&#x2F;13&#x2F;ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F&#x2F;</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a target="_blank" href=https://creativecommons.org/licenses/by-nc-sa/4.0/><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -615,20 +485,22 @@
           
         
         <div class="post-tags">
-            <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
+            <a href="/tags/ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/" rel="tag"><i class="fa fa-tag"></i> ssh反向代理</a>
+          
+            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" rel="tag"><i class="fa fa-tag"></i> 内网穿透</a>
           
         </div>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+              <a href="/2020/07/02/Shell-%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0/" rel="next" title="Shell 脚本学习">
+                <i class="fa fa-chevron-left"></i> Shell 脚本学习
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-              <a href="/2019/11/18/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/" rel="prev" title="激活函数">
-                激活函数 <i class="fa fa-chevron-right"></i>
-              </a>
-            
           </div>
         </div>
     </footer>
@@ -781,7 +653,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令"><span class="nav-number">1.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HEXO-NEXT-GITHUB-PAGE博客搭建"><span class="nav-number">2.</span> <span class="nav-text">HEXO + NEXT + GITHUB PAGE博客搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署到github"><span class="nav-number">3.</span> <span class="nav-text">部署到github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定域名"><span class="nav-number">4.</span> <span class="nav-text">绑定域名</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#正向代理"><span class="nav-number">1.</span> <span class="nav-text">正向代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反向代理"><span class="nav-number">2.</span> <span class="nav-text">反向代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何实现反向代理"><span class="nav-number">3.</span> <span class="nav-text">如何实现反向代理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-建立反向代理"><span class="nav-number">3.1.</span> <span class="nav-text">1. 建立反向代理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-检查是否执行成功"><span class="nav-number">3.2.</span> <span class="nav-text">2. 检查是否执行成功</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-测试登录"><span class="nav-number">3.3.</span> <span class="nav-text">3. 测试登录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-设置autossh"><span class="nav-number">3.4.</span> <span class="nav-text">4. 设置autossh</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>

@@ -69,15 +69,15 @@
   };
 </script>
 
-  <meta name="description" content="1. 什么是BERT？">
+  <meta name="description" content="1. 什么是BERT？ BERT的全称是Bidirectional Encoder Representation from Transformers，即双向Transformer的Encoder，因为decoder是不能获要预测的信息的。模型的主要创新点都在pre-train方法上，即用了Masked LM和Next Sentence Prediction两种方法分别捕捉词语和句子级别的repre">
 <meta name="keywords" content="pytorch,深度学习,文本分类,BERT,自然语言处理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何使用BERT进行文本分类？">
 <meta property="og:url" content="https:&#x2F;&#x2F;blog.zhaoxu.fun&#x2F;2020&#x2F;04&#x2F;18&#x2F;%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8BERT%E8%BF%9B%E8%A1%8C%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%EF%BC%9F&#x2F;index.html">
 <meta property="og:site_name" content="菜鸡的自我修养">
-<meta property="og:description" content="1. 什么是BERT？">
+<meta property="og:description" content="1. 什么是BERT？ BERT的全称是Bidirectional Encoder Representation from Transformers，即双向Transformer的Encoder，因为decoder是不能获要预测的信息的。模型的主要创新点都在pre-train方法上，即用了Masked LM和Next Sentence Prediction两种方法分别捕捉词语和句子级别的repre">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-18T03:46:57.894Z">
+<meta property="og:updated_time" content="2020-07-01T09:17:22.380Z">
 <meta name="twitter:card" content="summary">
   <link rel="alternate" href="/atom.xml" title="菜鸡的自我修养" type="application/atom+xml">
   <link rel="canonical" href="https://blog.zhaoxu.fun/2020/04/18/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8BERT%E8%BF%9B%E8%A1%8C%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%EF%BC%9F/">
@@ -333,11 +333,21 @@
                 
               
 
-              <time title="创建时间：2020-04-18 11:40:32 / 修改时间：11:46:57" itemprop="dateCreated datePublished" datetime="2020-04-18T11:40:32+08:00">2020-04-18</time>
+              <time title="创建时间：2020-04-18 11:40:32" itemprop="dateCreated datePublished" datetime="2020-04-18T11:40:32+08:00">2020-04-18</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-07-01 17:17:22" itemprop="dateModified" datetime="2020-07-01T17:17:22+08:00">2020-07-01</time>
+              </span>
             
           
 
@@ -377,7 +387,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">10</span>
+              <span title="本文字数">209</span>
             </span>
           
             <span class="post-meta-item">
@@ -400,7 +410,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="1-什么是BERT？"><a href="#1-什么是BERT？" class="headerlink" title="1. 什么是BERT？"></a>1. 什么是BERT？</h3>
+        <h3 id="1-什么是BERT？"><a href="#1-什么是BERT？" class="headerlink" title="1. 什么是BERT？"></a>1. 什么是BERT？</h3><p> BERT的全称是Bidirectional Encoder Representation from Transformers，即双向Transformer的Encoder，因为decoder是不能获要预测的信息的。模型的主要创新点都在pre-train方法上，即用了Masked LM和Next Sentence Prediction两种方法分别捕捉词语和句子级别的representation。</p>
+<h3 id="2-BERT结构"><a href="#2-BERT结构" class="headerlink" title="2. BERT结构"></a>2. BERT结构</h3>
     </div>
 
     
@@ -528,7 +539,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -554,7 +565,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -623,7 +634,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么是BERT？"><span class="nav-number">1.</span> <span class="nav-text">1. 什么是BERT？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么是BERT？"><span class="nav-number">1.</span> <span class="nav-text">1. 什么是BERT？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-BERT结构"><span class="nav-number">2.</span> <span class="nav-text">2. BERT结构</span></a></li></ol></div>
             
 
           </div>
@@ -650,12 +661,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">5k</span>
+    <span title="站点总字数">6k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4 分钟</span>
+    <span title="站点阅读时长">6 分钟</span>
 </div>
 
         
