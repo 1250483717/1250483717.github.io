@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.zhaoxu.fun/"/>
-  <updated>2020-07-13T07:27:56.694Z</updated>
+  <updated>2020-07-13T08:42:33.439Z</updated>
   <id>https://blog.zhaoxu.fun/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Echarts进行知识图谱可视化</title>
+    <link href="https://blog.zhaoxu.fun/2020/07/13/%E4%BD%BF%E7%94%A8Echarts%E8%BF%9B%E8%A1%8C%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    <id>https://blog.zhaoxu.fun/2020/07/13/%E4%BD%BF%E7%94%A8Echarts%E8%BF%9B%E8%A1%8C%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E5%8F%AF%E8%A7%86%E5%8C%96/</id>
+    <published>2020-07-13T08:36:32.000Z</published>
+    <updated>2020-07-13T08:42:33.439Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近在做一个新冠知识图谱方面的工作，需要的对新冠知识图谱的三元组进行可视化的展示，这里选用的是Echarts来进行知识图谱可视化。&lt;/p&gt;
+&lt;h3 id=&quot;Echarts&quot;&gt;&lt;a href=&quot;#Echarts&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="知识图谱" scheme="https://blog.zhaoxu.fun/categories/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/"/>
+    
+    
+      <category term="知识图谱可视化" scheme="https://blog.zhaoxu.fun/tags/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    
+  </entry>
   
   <entry>
     <title>ssh反向代理实现内网穿透</title>
